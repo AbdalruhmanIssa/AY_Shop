@@ -1,0 +1,22 @@
+# Build artifacts
+**/bin/
+**/obj/
+publish/
+out/
+
+# VS / Rider
+.vs/
+*.user
+*.suo
+
+# Logs & dumps
+*.log
+*.dmp
+
+# Secrets (keep real values in user-secrets / env vars)
+appsettings.Development.json
+appsettings.*.local.json
+
+# Node / frontend (if present)
+node_modules/
+dist/

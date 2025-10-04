@@ -1,0 +1,6 @@
+@AYShop.PL_HostAddress = http://localhost:5017
+
+GET {{AYShop.PL_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
