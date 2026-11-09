@@ -46,7 +46,13 @@ namespace AYShop.BLL.Services.Classes
             var entity = _geniricService.GetById(id);
             return entity is null ? default : entity.Adapt<TResponse>();
         }
-
+        public int Update(int id, TRequest request)
+        {
+            var entity = _geniricService.GetById(id);
+            if (entity is null) return 0;
+            var updated = request.Adapt(entity);
+            return _geniricService.Update(updated);
+        }
         public bool ToggleStatus(int id)
         {
             var category = _geniricService.GetById(id);
@@ -57,12 +63,6 @@ namespace AYShop.BLL.Services.Classes
             return true;
         }
 
-        public int Update(int id, TRequest request)
-        {
-            var entity = _geniricService.GetById(id);
-            if (entity is null) return 0;
-            var updated=request.Adapt(entity);
-            return _geniricService.Update(updated);
-        }
+     
     }
 }
